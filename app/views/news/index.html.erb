@@ -3,7 +3,7 @@
 </div>
 <div class="container" style="padding: 20px 0;" >
   <div class="text-right">
-    Dinero desperdiciado en corrupción desde la creación de este sitio $<span class="value-money">0</span>
+    Dinero desperdiciado en corrupción desde la creación de este sitio $<span class="value-money-global"><%= @money.value %></span>
   </div>
   <div class="text-right">
     ó<br>
@@ -58,7 +58,17 @@
 
         $('.value-money').animateNumber({ number: lostMoney, numberStep: dot_separator_number_step });
       }
+      var updateMoneyGlobal = function(){
+        $.ajax({
+          dataType: "script",
+          url: '/lost_money.js', // you could be fancy and set this in a data attribute.
+          success: function(response) {
+            // update your form with the response from your ajax request
+          }
+       });
+      }
       setInterval(updateMoney, 1000);
+      setInterval(updateMoneyGlobal, 1000);
       updateMoney()
       $('[data-toggle="tooltip"]').tooltip()
     });

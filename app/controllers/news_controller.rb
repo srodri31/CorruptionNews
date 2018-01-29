@@ -9,6 +9,14 @@ class NewsController < ApplicationController
     @google2 = get_rss('https://news.google.com/news/rss/search/section/q/Desfalco%20en%20Colombia/Desfalco%20en%20Colombia?hl=es-419&gl=CO&ned=es_co')
     @google3 = get_rss('https://news.google.com/news/rss/search/section/q/Desvio%20de%20recursos%20en%20Colombia/Desvio%20de%20recursos%20en%20Colombia?hl=es-419&gl=CO&ned=es_co')
     @claim = "El anterior no es un valor real, solo es un valor representativo basado en datos estadisticos y de investigación"
+    @money = Persistence.find_by(name: 'money')
+  end
+
+  def lost_money
+    @money = Persistence.find_by(name: 'money')
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

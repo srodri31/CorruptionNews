@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: corruption-news_development
+  username: postgres
   password: root
   host: localhost
   port: 5432
@@ -62,6 +63,7 @@ development:
 test:
   <<: *default
   database: corruption-news_test
+  username: postgres
   password: root
   host: localhost
   port: 5432

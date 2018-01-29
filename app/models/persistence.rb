@@ -1,0 +1,2 @@
+class Persistence < ApplicationRecord
+end
