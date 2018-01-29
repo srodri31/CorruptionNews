@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CorruptionNews</title>
+    <%= csrf_meta_tags %>
+    <meta property="og:url"           content="https://corruption.herokuapp.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="No más corrupción" />
+    <meta property="og:description"   content="Ve las ultimas novedades de la corrupción en Colombia" />
+    <meta property="og:image"         content="https://admin.bluradio.com/sites/default/files/styles/blu_medium_650x466/public/blu_radio_alvaro_uribe_velez_foto_afp.jpg?itok=HRcRii6g" />
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
