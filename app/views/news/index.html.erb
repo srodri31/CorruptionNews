@@ -7,7 +7,7 @@
     <!-- (29/01/2018 3:18 PM) -->
   </div>
   <div class="text-right">
-    Desde que entraste a este sitio se ha perdido en Colombia $<span class="value-money">0</span> debido a la corrupción <a href="http://www.eltiempo.com/justicia/delitos/precio-de-la-corrupcion-en-colombia-61749" target="blank" data-toggle="tooltip" title="<%= @claim %>">Info</a>
+    Desde que entraste a este sitio se ha perdido en Colombia $<span class="value-money">0</span><br><a href="http://www.eltiempo.com/justicia/delitos/precio-de-la-corrupcion-en-colombia-61749" target="blank" data-toggle="tooltip" title="<%= @claim %>">Info</a>
   </div>
   <div class="text-right">
     ¿Qué harias tu con este dinero? Cuentanos en 
@@ -22,33 +22,39 @@
   <div class="row">
       <% @google.each do |article| %>
       <div class="col-md-4 article-padding">
-        <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
-        <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></a></p></small>
-        <p>
-        <%= article[:description].html_safe %>
-        </p>
+        <div class="card">
+          <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
+          <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
+          <p>
+          <%= article[:description].html_safe %>
+          </p>
+        </div>
       </div>  
       <% end %>
   </div>
   <div class="row">
       <% @google2.each do |article| %>
       <div class="col-md-4 article-padding">
-        <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
-        <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %> </a></p></small>
-        <p>
-        <%= article[:description].html_safe %>
-        </p>
+        <div class="card">
+          <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
+          <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
+          <p>
+          <%= article[:description].html_safe %>
+          </p>
+        </div>
       </div>  
       <% end %>
   </div>
   <div class="row">
       <% @google3.each do |article| %>
       <div class="col-md-4 article-padding">
-        <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
-        <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %> </a></p></small>
-        <p>
-        <%= article[:description].html_safe %>
-        </p>
+        <div class="card">
+          <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
+          <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
+          <p>
+          <%= article[:description].html_safe %>
+          </p>
+        </div>
       </div>  
       <% end %>
   </div>
