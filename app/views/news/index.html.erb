@@ -21,7 +21,6 @@
 <div class="container news">
   <div class="row">
       <% @google.each do |article| %>
-      <div class="col-md-4 article-padding">
         <div class="card">
           <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
           <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
@@ -29,12 +28,10 @@
           <%= article[:description].html_safe %>
           </p>
         </div>
-      </div>  
       <% end %>
   </div>
   <div class="row">
       <% @google2.each do |article| %>
-      <div class="col-md-4 article-padding">
         <div class="card">
           <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
           <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
@@ -42,12 +39,10 @@
           <%= article[:description].html_safe %>
           </p>
         </div>
-      </div>  
       <% end %>
   </div>
   <div class="row">
       <% @google3.each do |article| %>
-      <div class="col-md-4 article-padding">
         <div class="card">
           <a href="<%= article[:link] %>" target="blank"><p><strong><%= article[:title] %></strong></p></a>
           <small><p style="margin-top:-10px"> <%= article[:date].strftime("Publicado: %F") %></p></small>
@@ -55,7 +50,6 @@
           <%= article[:description].html_safe %>
           </p>
         </div>
-      </div>  
       <% end %>
   </div>
 </div>
@@ -82,5 +76,20 @@
       setInterval(updateMoneyGlobal, 1000);
       updateMoney()
       $('[data-toggle="tooltip"]').tooltip()
+    });
+
+
+    $( window ).load(function() {
+      // Portfolio Isotope
+      var team = $('.news .row');
+      team.isotope({
+        itemSelector: '.card',
+        animationEngine : 'best-available',
+        animationOptions: {
+          duration: 200,
+          queue: false
+        },
+        layoutMode: 'fitRows'
+      });
     });
 </script>
